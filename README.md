@@ -18,11 +18,11 @@
 <div align="center">
 
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
-![Contributors](https://img.shields.io/github/contributors/larigens/git-goodies?style=plastic&color=red)
-![Forks](https://img.shields.io/github/forks/larigens/git-goodies?style=plastic&color=red)
-![Stars](https://img.shields.io/github/stars/larigens/git-goodies?style=plastic&color=red)
+![Contributors](https://img.shields.io/github/contributors/thebobfather2/pawpals?style=plastic&color=red)
+![Forks](https://img.shields.io/github/forks/thebobfather2/pawpals?style=plastic&color=red)
+![Stars](https://img.shields.io/github/stars/thebobfather2/pawpals?style=plastic&color=red)
 ![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=red)
-![Issues](https://img.shields.io/github/issues/larigens/git-goodies?style=plastic&color=red)
+![Issues](https://img.shields.io/github/issues/thebobfather2/pawpals?style=plastic&color=red)
 
 </div>
 
@@ -134,7 +134,7 @@ Launch the application by entering the command below on your terminal:
 npm start
 ```
 
-If you need more guidance on how to use Git Goodies, click [here]() for the tutorial!
+If you need more guidance on how to use Paw Pals, click [here]() for the tutorial!
 
 ## Tests
 
