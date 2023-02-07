@@ -1,0 +1,34 @@
+{
+  "name": "pawpals",
+  "version": "1.0.0",
+  "description": "help animals in need find their forever homes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebobfather2/pawpals.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "expressjs",
+    "mysql",
+    "sequelize"
+  ],
+  "author": "Anastasia Markova, Bryan Pike, Larissa Guilherme, Naz Yasar, Sarah Jacobs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thebobfather2/pawpals/issues"
+  },
+  "homepage": "https://github.com/thebobfather2/pawpals#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "inquirer": "^8.2.5",
+    "mysql2": "^3.1.0",
+    "sequelize": "^6.28.0"
+  }
+}
