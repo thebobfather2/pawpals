@@ -12,7 +12,7 @@
 
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-4">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">PawPals</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,15 +34,31 @@
     <div class="jumbotron jumbotron-fluid p-1 bg-light">
         <div class="container">
           <h1 class="display-4">Find Your New Paw Pal Today!</h1>
-          <h6 class="text-primary">(bryan should totally put a fun dog gif here)</h6>
+          <h6 class="text-primary">(bryan should totally put a fun dog gif here ------------------------------------------------------------------->)</h6>
           <p class="lead">Browse the different featured pups below to find the best fit for you! Once you've found your newest pal, click on our Contact Us or login to submit your application today.</p>
     
         </div>
       </div>
+
+      
+
       <div class="container p-3 row">
       <div class="card p-2 ml-2 mb-2" style="width: 18rem;">
         <img class="card-img-top" src="./images/dogstock1" alt="Card image cap">
         <div class="card-body">
+          <h6>Perfect Pooch #1</h6>
+          <p>
+            <!--Add collapsable card-->
+            <a class="btn btn-success" data-toggle="collapse" href="#dogCollapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+              Get to know: *Dog's name*
+            </a>
+          </p>
+          <div class="collapse" id="dogCollapse">
+            <div class="card card-body">
+              <p>Meet: *Dog's name*. He's a fun, loving dog who's looking for a forever home! Think you're a good fit? Apply <a href="#contact-us">here</a> today!</p>            </div>
+          </div>
+
+
           <p class="card-text">Perfect Pooch #1!</p>
         </div>
             <img class="card-img-top" src="./images/dogstock1" alt="Card image cap">
@@ -57,6 +73,7 @@
         </div>
       </div>
     </div>
+    
 </div>
 </body>
 </html>
