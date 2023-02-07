@@ -51,6 +51,13 @@ app.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, '/public/pages/contact.html'));
 })
 
+// GET Route for login page.
+app.get('/login', (req, res) => {
+  // Logs the request to the terminal.
+  console.info(`${req.method} request received for ${req.path}`);
+  res.sendFile(path.join(__dirname, '/public/pages/login.html'));
+})
+
 // GET Route for homepage / Fallback route.
 app.get('*', (req, res) => {
   // Logs the request to the terminal.
