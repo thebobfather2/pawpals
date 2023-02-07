@@ -4,7 +4,10 @@
   "description": "help animals in need find their forever homes",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "express": "^4.18.2",
     "inquirer": "^8.2.5",
     "mysql2": "^3.1.0",
+    "node": "^18.14.0",
     "sequelize": "^6.28.0"
   }
 }
