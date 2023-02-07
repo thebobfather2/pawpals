@@ -1,7 +1,7 @@
 <h1 align="center"> Paw Pals </h1>
 
 <p align="center">
-    <img src="./assets/logo.png" alt="logo" width="125px" height="125px" />
+    <img src="./assets/images/logo.png" alt="logo" width="125px" height="125px" />
   <br><br>
   <i> Adopt A Pet Near You!
     <br> built using Node.js and MySQL</i>
@@ -17,12 +17,12 @@
 
 <div align="center">
 
-![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
-![Contributors](https://img.shields.io/github/contributors/thebobfather2/pawpals?style=plastic&color=red)
-![Forks](https://img.shields.io/github/forks/thebobfather2/pawpals?style=plastic&color=red)
-![Stars](https://img.shields.io/github/stars/thebobfather2/pawpals?style=plastic&color=red)
-![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=red)
-![Issues](https://img.shields.io/github/issues/thebobfather2/pawpals?style=plastic&color=red)
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-ff69b4.svg)
+![Contributors](https://img.shields.io/github/contributors/thebobfather2/pawpals?style=plastic&color=ff69b4)
+![Forks](https://img.shields.io/github/forks/thebobfather2/pawpals?style=plastic&color=ff69b4)
+![Stars](https://img.shields.io/github/stars/thebobfather2/pawpals?style=plastic&color=ff69b4)
+![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=ff69b4)
+![Issues](https://img.shields.io/github/issues/thebobfather2/pawpals?style=plastic&color=ff69b4)
 
 </div>
 
@@ -172,7 +172,7 @@ For questions and support feel free to contact us via:
 
 <a href="mailto:bryanandrewpike@gmail.com">📧 Email Bryan Pike </a>
 
-<a href="mailto:">📧 Email Anastasia Markova </a>
+<a href="mailto:anastasiamarkova@icloud.com">📧 Email Anastasia Markova </a>
 
 <a href="mailto:">📧 Email Naz Yasar </a>
 
