@@ -1,5 +1,3 @@
-.card-img-top {
-    width: 10%;
-    height: 15vw;
-    object-fit: cover;
+* {
+    font-family: monospace;
 }
