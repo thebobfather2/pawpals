@@ -167,9 +167,13 @@ The following animation shows the application's **POST, PUT, and DELETE** routes
 For questions and support feel free to contact us via:
 
 <a href="mailto:larigens@gmail.com">📧 Email Larissa Guilherme </a>
+
 <a href="mailto:">📧 Email Sarah Jacobs </a>
+
 <a href="mailto:bryanandrewpike@gmail.com">📧 Email Bryan Pike </a>
+
 <a href="mailto:">📧 Email Anastasia Markova </a>
+
 <a href="mailto:">📧 Email Naz Yasar </a>
 
 ## Contributing
@@ -187,9 +191,13 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 ### Authors
 
 🐈‍⬛ <a href="https://github.com/larigens"> Larissa Guilherme </a>
+
 🐕 <a href="https://github.com/thebobfather2"> Bryan Pike </a>
-🐈 <a href="https://github.com/larigens"> Anastasia Markova </a>
-🦮 <a href="https://github.com/larigens"> Sarah Jacobs </a>
+
+🐈 <a href="https://github.com/mriya20"> Anastasia Markova </a>
+
+🦮 <a href="https://github.com/sarahgjacobs"> Sarah Jacobs </a>
+
 🐇 <a href="https://github.com/nazyasar"> Naz Yasar </a>
 
 ### Acknowledgements
