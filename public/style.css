@@ -6,3 +6,21 @@
     font-size: 30px;
 }
 
+.lead {
+    width: 90%;
+}
+
+.banner {
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.dogGif {
+
+}
