@@ -72,10 +72,7 @@
     <div class="jumbotron jumbotron-fluid p-1 bg-light">
       <div class="container">
         <h1 class="display-4 pawpals">Find Your New Paw Pal Today!</h1>
-        <h6 class="text-primary">
-          (bryan should totally put a fun dog gif here
-          ------------------------------------------------------------------->)
-        </h6>
+     
         <p class="lead">
           Browse the different featured pups below to find the best fit for
           you! Once you've found your newest pal, click on our Contact Us or
@@ -86,9 +83,45 @@
 
     <h1>Contact Us or Apply for your pal today!</h1>
 
+    <div class="d-flex justify-content-center align-items-center">
+      <form class="p-5 border border-primary">
+        <div class="form-group">
+          <label for="userName">Fullname</label>
+          <input type="email" class="form-control" id="userName">
+        </div>
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="email" class="form-control" id="inputEmail">
+        </div>
+        <div class="form-group">
+          <label for="inputPhone">Phone Number</label>
+          <input type="password" class="form-control" id="inputPhone">
+        </div>
+    
+        <button type="submit" class="btn btn-primary" onclick="showSuccessMessage()">Submit</button>
+        
+      </form>
+    </div>
+
+    <!-- Success message container -->
+    <div id="success-message" class="d-none alert alert-success text-center p-2 mt-2" role="alert">
+      Thank you PawPal! We will reach out to you soon!
+    </div>
+    
+    <script>
+      function showSuccessMessage() {
+        // Show the success message
+        document.getElementById("success-message").classList.remove("d-none");
+      }
+    </script>
+    
+
+
+
+
   </main>
 
-  <footer class="ms-1 mt-1 me-1">
+  <footer class="m2 text-center">
     <p>Made with <span class="icon"> 🐾 </span> by Paw Pals</p>
   </footer>
 

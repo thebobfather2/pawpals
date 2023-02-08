@@ -1,6 +1,9 @@
 //============== Import Methods ==============//
 const Animals = require("./Animals");
 const Species = require("./Species");
+const Users = require('./Users');
+const Pets = require('./Pets');
+const Likes = require('./Likes');
 
 //============================= Association Methods =============================//
 
@@ -16,16 +19,7 @@ Species.hasMany(Animals, {
     onDelete: "CASCADE",
 });
 
-module.exports = {
-    Animals,
-    Species,
-};
-
 //============================= Anastasia  =============================//
-
-const Users = require('./Users');
-const Pets = require('./Pets');
-const Likes = require('./Likes');
 
 //likes - many to many relationship between users and pets
 Users.belongsToMany(Pets, {
@@ -57,4 +51,7 @@ Likes.belongsTo(Users, {
 
 });
 
-module.exports = { Users, Pets, Likes };
+module.exports = {
+    Users, Pets, Likes, Animals,
+    Species,
+};

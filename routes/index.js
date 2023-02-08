@@ -14,12 +14,6 @@ router.use('/contact', contactRoutes);
 router.use('/login', loginRoutes);
 router.use('/rabbits', rabbitsRoutes);
 
-// Prefix all routes defined in the api directory with `/api`.
-router.use("/api", apiRoutes);
-
-// Prefix all routes defined in the api directory with `/pages`.
-// router.use("/pages", pagesRoutes);
-
 router.use((req, res) => {
   res.send("<h1> Ooops 🐾 </h1>")
 });
