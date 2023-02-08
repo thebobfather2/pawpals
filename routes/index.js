@@ -15,7 +15,7 @@ router.use('/login', loginRoutes);
 router.use('/rabbits', rabbitsRoutes);
 
 router.use((req, res) => {
-  res.send("<h1>Ooops</h1>")
+  res.send("<h1> Ooops 🐾 </h1>")
 });
 
 module.exports = router;

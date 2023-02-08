@@ -55,8 +55,7 @@ class Prepare extends Command {
     }
     const cmdPacket = new Packets.PrepareStatement(
       this.query,
-      connection.config.charsetNumber,
-      this.options.values
+      connection.config.charsetNumber
     );
     connection.writePacket(cmdPacket.toPacket(1));
     return Prepare.prototype.prepareHeader;

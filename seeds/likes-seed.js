@@ -45,5 +45,5 @@ const likesdata = [
 ];
 
 const seedLikes = () => Likes.bulkCreate(likesdata);
-
+module.exports = seedLikes;
 module.exports = seedLikes;

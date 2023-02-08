@@ -52,7 +52,6 @@ class ColumnDefinition {
     );
     this.columnLength = packet.readInt32();
     this.columnType = packet.readInt8();
-    this.type = this.columnType;
     this.flags = packet.readInt16();
     this.decimals = packet.readInt8();
   }
@@ -68,7 +67,6 @@ class ColumnDefinition {
       characterSet: this.characterSet,
       columnLength: this.columnLength,
       columnType: this.columnType,
-      type: this.columnType,
       flags: this.flags,
       decimals: this.decimals
     };
