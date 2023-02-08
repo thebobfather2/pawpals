@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thebobfather2/pawpals.git"
+    "url": "https://github.com/thebobfather2/pawpals"
   },
   "keywords": [
     "nodejs",
@@ -26,13 +26,14 @@
     "url": "https://github.com/thebobfather2/pawpals/issues"
   },
   "homepage": "https://github.com/thebobfather2/pawpals#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
   "dependencies": {
-    "console.table": "^0.10.0",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "inquirer": "^8.2.5",
-    "mysql2": "^3.1.0",
-    "node": "^18.14.0",
-    "sequelize": "^6.28.0"
+    "bcrypt": "^5.1.0",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^5.22.5"
   }
 }

@@ -16,47 +16,46 @@ app.use(express.static('public'));
 // Turn on routes.
 app.use(routes);
 
-// GET Route for about page.
-app.get('/about', (req, res) => {
-  // Logs the request to the terminal.
-  console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/about.html'));
-})
-
 // GET Route for dogs page.
 app.get('/dogs', (req, res) => {
   // Logs the request to the terminal.
   console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/dogs.html'));
+  res.sendFile(path.join(__dirname, '../../public/pages/dogs.html'));
 })
+// // GET Route for about page.
+// app.get('/about', (req, res) => {
+//   // Logs the request to the terminal.
+//   console.info(`${req.method} request received for ${req.path}`);
+//   res.sendFile(path.join(__dirname, '/public/pages/about.html'));
+// })
 
-// GET Route for cats page.
-app.get('/cats', (req, res) => {
-  // Logs the request to the terminal.
-  console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/cats.html'));
-})
+// // GET Route for cats page.
+// app.get('/cats', (req, res) => {
+//   // Logs the request to the terminal.
+//   console.info(`${req.method} request received for ${req.path}`);
+//   res.sendFile(path.join(__dirname, '/public/pages/cats.html'));
+// })
 
-// GET Route for rabbits page.
-app.get('/rabbits', (req, res) => {
-  // Logs the request to the terminal.
-  console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/rabbits.html'));
-})
+// // GET Route for rabbits page.
+// app.get('/rabbits', (req, res) => {
+//   // Logs the request to the terminal.
+//   console.info(`${req.method} request received for ${req.path}`);
+//   res.sendFile(path.join(__dirname, '/public/pages/rabbits.html'));
+// })
 
-// GET Route for contact page.
-app.get('/contact', (req, res) => {
-  // Logs the request to the terminal.
-  console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/contact.html'));
-})
+// // GET Route for contact page.
+// app.get('/contact', (req, res) => {
+//   // Logs the request to the terminal.
+//   console.info(`${req.method} request received for ${req.path}`);
+//   res.sendFile(path.join(__dirname, '/public/pages/contact.html'));
+// })
 
-// GET Route for login page.
-app.get('/login', (req, res) => {
-  // Logs the request to the terminal.
-  console.info(`${req.method} request received for ${req.path}`);
-  res.sendFile(path.join(__dirname, '/public/pages/login.html'));
-})
+// // GET Route for login page.
+// app.get('/login', (req, res) => {
+//   // Logs the request to the terminal.
+//   console.info(`${req.method} request received for ${req.path}`);
+//   res.sendFile(path.join(__dirname, '/public/pages/login.html'));
+// })
 
 // GET Route for homepage / Fallback route.
 app.get('*', (req, res) => {
