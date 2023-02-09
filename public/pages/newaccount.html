@@ -71,47 +71,66 @@
   <main>
     <div class="jumbotron jumbotron-fluid p-1 bg-light">
       <div class="container">
-        <h1 class="display-4 pawpals">Welcome to Paw Pal!🐾</h1>
-
-        <p class="lead">
-          Welcome to our pet adoption platform! To access all of our furry friends in need of a loving home, please log in to your account. 
-          If you don't have an account yet, no worries! Simply click on the 'Create an Account' button and follow the steps to create one.
-        </p>
+        <h1 class="display-4 pawpals">Become a Paw Pal!🐾</h1>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <div class="card my-3">
+    <section class="vh-100 bg-image"
+    style="background-image: url('../assets/images/background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h5 class="text-uppercase text-center mb-5">Create an account</h5>
   
-            <form class="card-body cardbody-color p-lg-2">
+                <form>
   
-              <div class="text-center">
-                <img src="../assets/images/dogstock1" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                  width="200px" alt="profile">
-              </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                  </div>
   
-              <div class="mb-3">
-                <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                  placeholder="User Name">
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  </div>
+  
+                  <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                    <label class="form-check-label" for="form2Example3g">
+                      I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                    </label>
+                  </div>
+  
+                  <div class="d-flex justify-content-center">
+                    <button type="button"
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="./login.html"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+  
+                </form>
+  
               </div>
-              <div class="mb-3">
-                <input type="password" class="form-control" id="password" placeholder="Pawword">
-              </div>
-              <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5">Login</button></div>
-              <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
-                Registered? <a href="./newaccount.html" class="text-dark fw-bold"> Create an
-                  Account</a>
-
-                  <!-- w-100 I will delete this later -->
-              </div>
-            </form>
+            </div>
           </div>
-  
         </div>
       </div>
     </div>
+  </section>
+
   </main>
   </main>
   <footer class="m2 text-center">
