@@ -7,7 +7,8 @@
 }
 
 .lead {
-    width: 90%;
+    text-align: center;
+    font-size: large;
 }
 
 .banner {
@@ -21,6 +22,28 @@
     flex-direction: column;
 }
 
-.dogGif {
+.btn-color{
+    background-color: #09317b;
+    color: #fff;
+    
+  }
+  
+  .profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  
+  .cardbody-color{
+    background-color: #ebf2fa;
+  }
+  
+  a{
+    text-decoration: none;
+  }
 
-}
+  .pawpals {
+    /* background-color: #c8dbf0; */
+    text-align: center;
+  }
