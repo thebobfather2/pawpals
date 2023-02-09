@@ -74,49 +74,50 @@
         <h1 class="display-4 pawpals">Find Your New Paw Pal Today!</h1>
      
         <p class="lead">
-          Browse the different featured pups below to find the best fit for
-          you! Once you've found your newest pal, click on our Contact Us or
-          login to submit your application today.
+          We are so excited that you are joining our Paw Pals community!😍
         </p>
       </div>
     </div>
 
-    <h1>Contact Us or Apply for your pal today!</h1>
+    <!-- <h1>Contact Us or Apply for your pal today!</h1> -->
 
-    <div class="d-flex justify-content-center align-items-center">
-      <form class="p-5 border border-primary">
-        <div class="form-group">
-          <label for="userName">Fullname</label>
-          <input type="email" class="form-control" id="userName">
-        </div>
-        <div class="form-group">
-          <label for="inputEmail">Email address</label>
-          <input type="email" class="form-control" id="inputEmail">
-        </div>
-        <div class="form-group">
-          <label for="inputPhone">Phone Number</label>
-          <input type="password" class="form-control" id="inputPhone">
-        </div>
-    
-        <button type="submit" class="btn btn-primary" onclick="showSuccessMessage()">Submit</button>
-        
-      </form>
-    </div>
-
-    <!-- Success message container -->
-    <div id="success-message" class="d-none alert alert-success text-center p-2 mt-2" role="alert">
-      Thank you PawPal! We will reach out to you soon!
-    </div>
-    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card my-3">
+  
+            <form class="card-body cardbody-color p-lg-2">
+  
+              <div class="text-center">
+                <img src="../assets/images/newuser.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  width="200px" alt="profile">
+              </div>
+  
+              <div class="mb-3">
+                <input type="text" class="form-control" id="fullname"
+                  placeholder="Full Name">
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="email" 
+                placeholder="Email Address">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control" id="phone"
+                  placeholder="Phone Number">
+              </div>
+              <div class="text-center"><button id="myButton" type="submit" class="btn btn-color px-5 mb-5">Submit</button></div>
     <script>
-      function showSuccessMessage() {
-        // Show the success message
-        document.getElementById("success-message").classList.remove("d-none");
-      }
+      document.getElementById("myButton").addEventListener("click", function(){
+        alert("Thank you! Our team will reach out to you soon :)");
+      });
     </script>
-    
-
-
+              </div>
+            </form>
+          </div>
+  
+        </div>
+      </div>
+    </div>
 
 
   </main>
