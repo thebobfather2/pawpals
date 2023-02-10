@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users, Pets, Likes } = require('../../models');
+const { Users, Pets } = require('../../models');
 
 // get api/users
 router.get('/login', (req, res) => {
@@ -20,14 +20,14 @@ router.get('/:userId', (req, res) => {
         where: {
             userId: req.params.userId
         },
-        include: [
-            {
-                model: Pets,
-                attributes: ['petname', 'age', 'sex', 'type', 'breed', 'description', 'imgurl'],
-                through: Likes,
-                as: 'liked_pets'
-            }
-        ]
+        // include: [
+        //     {
+        //         model: Pets,
+        //         attributes: ['petname', 'age', 'sex', 'type', 'breed', 'description', 'imgurl'],
+        //         through: Likes,
+        //         as: 'liked_pets'
+        //     }
+        // ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
