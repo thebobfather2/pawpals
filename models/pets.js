@@ -3,13 +3,13 @@ const sequelize = require('../config/connection');
 
 // create pets table to house pet information
 class Pets extends Model {
-    static like(body, models) {
-        return models.Likes.create({
-            uid: body.uid,
-            pid: body.pid
-        })
+    // static like(body, models) {
+    //     return models.Likes.create({
+    //         uid: body.uid,
+    //         pid: body.pid
+    //     })
 
-    }
+    // }
 }
 
 // create fields/columns for pets model (table)

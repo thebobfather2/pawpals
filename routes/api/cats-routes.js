@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { compareSync } = require('bcrypt');
-const { Pets, Likes, Users } = require('../../models');
+const { Pets, Users } = require('../../models');
 
 // routes for api/pets
 // get all pets module 14 activity 22
@@ -72,16 +72,6 @@ router.post('/cats', (req, res) => {
 //     })
 // })
 
-// put request /api/pets/likes
-router.put('/likes', (req, res) => {
-    // custom static method created in models/Pets.js
-    Pets.like({ ...req.body, uid: req.session.userId }, { Likes, Users })
-        .then(updatedLikeData => res.json(updatedLikeData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
 
 // Update pet info
 router.put('/:petId', (req, res) => {

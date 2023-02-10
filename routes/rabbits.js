@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require("../../config/connection");
 const { Pets } = require('../models');
 
 // get all of the pets

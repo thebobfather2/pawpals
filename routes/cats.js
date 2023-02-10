@@ -4,6 +4,7 @@ const { Pets } = require('../models');
 // get all of the pets
 router.get('/cats', (req, res) => {
     console.log(req.session);
+    //where pets are cats
     Pets.findAll({
         attributes: ['petId', 'petname', 'age', 'sex', 'type', 'breed', 'description', 'imgurl']
     })
