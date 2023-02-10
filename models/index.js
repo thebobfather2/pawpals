@@ -1,8 +1,6 @@
 //============== Import Methods ==============//
 const Pets = require('./Pets');
 const Species = require("./Species");
-// const Users = require('./Users');
-
 //============================= Association Methods =============================//
 
 // Pets belongsTo Species.
