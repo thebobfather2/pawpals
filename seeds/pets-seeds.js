@@ -1,8 +1,8 @@
-const { Animals } = require('../models'); // Imports the models.
+const { Pets } = require('../models'); // Imports the models.
 
-const animalData = [
+const petData = [
   {
-    animal_name: 'Bella',
+    pet_name: 'Bella',
     breed: 'German Shepherd',
     gender: 'Female',
     age: 5,
@@ -13,7 +13,7 @@ const animalData = [
     species_id: 1,
   },
   {
-    animal_name: 'Charlie',
+    pet_name: 'Charlie',
     breed: 'English Bullanimal',
     gender: 'Male',
     age: 9,
@@ -24,7 +24,7 @@ const animalData = [
     species_id: 1,
   },
   {
-    animal_name: 'Max',
+    pet_name: 'Max',
     breed: 'Chihuahua',
     gender: 'Male',
     age: 2,
@@ -35,7 +35,7 @@ const animalData = [
     species_id: 1,
   },
   {
-    animal_name: 'Luna',
+    pet_name: 'Luna',
     breed: 'Poodle',
     gender: 'Female',
     age: 9,
@@ -46,7 +46,7 @@ const animalData = [
     species_id: 1,
   },
   {
-    animal_name: 'Bailey',
+    pet_name: 'Bailey',
     breed: 'Beagle',
     gender: 'Female',
     age: 3,
@@ -57,7 +57,7 @@ const animalData = [
     species_id: 1,
   },
   {
-    animal_name: 'Milo',
+    pet_name: 'Milo',
     breed: 'Siamese',
     gender: 'Male',
     age: 6,
@@ -69,6 +69,6 @@ const animalData = [
   },
 ];
 
-const seedAnimals = () => Animals.bulkCreate(animalData);
+const seedPets = () => Pets.bulkCreate(petData);
 
-module.exports = seedAnimals;
+module.exports = seedPets;

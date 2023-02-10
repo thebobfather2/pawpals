@@ -1,25 +1,19 @@
 //============== Import Methods ==============//
-const Animals = require("./Animals");
-const Species = require("./Species");
-const Users = require('./Users');
 const Pets = require('./Pets');
-// const Likes = require('./Likes');
-
+const Species = require("./Species");
 //============================= Association Methods =============================//
 
-// Animals belongsTo Species.
-Animals.belongsTo(Species, {
+// Pets belongsTo Species.
+Pets.belongsTo(Species, {
     foreignKey: "species_id",
 });
 
-// Species have many Animals.
-Species.hasMany(Animals, {
+// Species have many Pets.
+Species.hasMany(Pets, {
     foreignKey: "species_id",
-    // When we delete a Specie, make sure to also delete the associated Animals.
+    // When we delete a Specie, make sure to also delete the associated Pets.
     onDelete: "CASCADE",
 });
-
-//============================= Anastasia  =============================//
 
 //likes - many to many relationship between users and pets
 // Users.belongsToMany(Pets, {
@@ -52,7 +46,6 @@ Species.hasMany(Animals, {
 // });
 
 module.exports = {
-    Users, Pets, Animals,
+    Pets,
     Species,
-    // Likes
-};
+}

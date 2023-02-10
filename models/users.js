@@ -19,7 +19,6 @@ Users.init(
                 len: [5]
             }
         },
-
         username: {
             type: DataTypes.STRING,
             allowNull: false,

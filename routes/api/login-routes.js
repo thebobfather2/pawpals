@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Users, Pets } = require('../../models');
+const Users  = require('../../models/Users');
 
 // get api/users
 router.get('/login', (req, res) => {
@@ -19,15 +19,7 @@ router.get('/:userId', (req, res) => {
         attributes: { exclude: ['passwordHash'] },
         where: {
             userId: req.params.userId
-        },
-        // include: [
-        //     {
-        //         model: Pets,
-        //         attributes: ['petname', 'age', 'sex', 'type', 'breed', 'description', 'imgurl'],
-        //         through: Likes,
-        //         as: 'liked_pets'
-        //     }
-        // ]
+        }
     })
         .then(dbUserData => {
             if (!dbUserData) {
@@ -111,4 +103,4 @@ router.post('/logout', (req, res) => {
     }
 })
 
-module.exports = router;
+module.exports = router
