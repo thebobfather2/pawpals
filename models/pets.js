@@ -5,6 +5,7 @@ const sequelize = require("../config/connection");
 
 // Initialize Pets model (table) by extending off Sequelize's Model class.
 class Pets extends Model { }
+
 Pets.init(
     // Set up fields and rules for Pets model.
     {

@@ -17,8 +17,6 @@ Species.hasMany(Pets, {
     onDelete: "CASCADE",
 });
 
-//============================= Anastasia  =============================//
-
 //likes - many to many relationship between users and pets
 // Users.belongsToMany(Pets, {
 //     through: Likes,
@@ -52,4 +50,4 @@ Species.hasMany(Pets, {
 module.exports = {
     Pets,
     Species,
-};
+}
