@@ -17,24 +17,24 @@ const STATE_FINAL = -1;
 
 function sha256(msg) {
   const hash = crypto.createHash('sha256');
-  hash.update(msg);
-  return hash.digest();
+  hash.update(msg, 'binary');
+  return hash.digest('binary');
 }
 
 function calculateToken(password, scramble) {
   if (!password) {
     return Buffer.alloc(0);
   }
-  const stage1 = sha256(Buffer.from(password));
+  const stage1 = sha256(Buffer.from(password, 'utf8').toString('binary'));
   const stage2 = sha256(stage1);
-  const stage3 = sha256(Buffer.concat([stage2, scramble]));
+  const stage3 = sha256(stage2 + scramble.toString('binary'));
   return xor(stage1, stage3);
 }
 
 function encrypt(password, scramble, key) {
   const stage1 = xorRotating(
-    Buffer.from(`${password}\0`, 'utf8'),
-    scramble
+    Buffer.from(`${password}\0`, 'utf8').toString('binary'),
+    scramble.toString('binary')
   );
   return crypto.publicEncrypt(key, stage1);
 }
