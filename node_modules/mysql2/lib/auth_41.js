@@ -41,7 +41,16 @@ function sha1(msg, msg1, msg2) {
 }
 
 function xor(a, b) {
+  if (!Buffer.isBuffer(a)) {
+    a = Buffer.from(a, 'binary');
+  }
+
+  if (!Buffer.isBuffer(b)) {
+    b = Buffer.from(b, 'binary');
+  }
+
   const result = Buffer.allocUnsafe(a.length);
+
   for (let i = 0; i < a.length; i++) {
     result[i] = a[i] ^ b[i];
   }
@@ -51,6 +60,7 @@ function xor(a, b) {
 exports.xor = xor;
 
 function token(password, scramble1, scramble2) {
+  // TODO: use buffers (not sure why strings here)
   if (!password) {
     return Buffer.alloc(0);
   }
@@ -84,6 +94,14 @@ exports.doubleSha1 = function(password) {
 };
 
 function xorRotating(a, seed) {
+  if (!Buffer.isBuffer(a)) {
+    a = Buffer.from(a, 'binary');
+  }
+
+  if (!Buffer.isBuffer(seed)) {
+    seed = Buffer.from(seed, 'binary');
+  }
+
   const result = Buffer.allocUnsafe(a.length);
   const seedLen = seed.length;
 

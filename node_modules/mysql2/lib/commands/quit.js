@@ -7,7 +7,7 @@ const Packet = require('../packets/packet.js');
 class Quit extends Command {
   constructor(callback) {
     super();
-    this.onResult = callback;
+    this.done = callback;
   }
 
   start(packet, connection) {
@@ -18,8 +18,8 @@ class Quit extends Command {
       0,
       5
     );
-    if (this.onResult) {
-      this.onResult();
+    if (this.done) {
+      this.done();
     }
     connection.writePacket(quit);
     return null;

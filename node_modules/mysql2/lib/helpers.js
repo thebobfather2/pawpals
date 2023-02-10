@@ -25,9 +25,7 @@ exports.srcEscape = srcEscape;
 let highlightFn;
 let cardinalRecommended = false;
 try {
-  // the purpose of this is to prevent projects using Webpack from displaying a warning during runtime if cardinal is not a dependency
-  const REQUIRE_TERMINATOR = '';
-  highlightFn = require(`cardinal${REQUIRE_TERMINATOR}`).highlight;
+  highlightFn = require('cardinal').highlight;
 } catch (err) {
   highlightFn = text => {
     if (!cardinalRecommended) {

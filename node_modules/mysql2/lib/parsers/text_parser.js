@@ -85,15 +85,8 @@ function compile(fields, options, config) {
       db: field.schema,
       table: field.table,
       name: field.name,
-      string: function(encoding = field.encoding) {
-        if (field.columnType === Types.JSON && encoding === field.encoding) {
-          // Since for JSON columns mysql always returns charset 63 (BINARY),
-          // we have to handle it according to JSON specs and use "utf8",
-          // see https://github.com/sidorares/node-mysql2/issues/1661
-          console.warn(`typeCast: JSON column "${field.name}" is interpreted as BINARY by default, recommended to manually set utf8 encoding: \`field.string("utf8")\``);
-        }
-
-        return _this.packet.readLengthCodedString(encoding);
+      string: function() {
+        return _this.packet.readLengthCodedString(field.encoding);
       },
       buffer: function() {
         return _this.packet.readLengthCodedBuffer();
@@ -179,7 +172,7 @@ function compile(fields, options, config) {
       }  else {
         parserFn(`${lvalue} = ${readCode};`);
       }
-    }
+    }  
   }
 
   parserFn('return result;');
@@ -198,7 +191,7 @@ function compile(fields, options, config) {
   }
   if (typeof options.typeCast === 'function') {
     return parserFn.toFunction({wrap});
-  }
+  } 
   return parserFn.toFunction();
 }
 
