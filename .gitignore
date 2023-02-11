@@ -1,3 +1,4 @@
+# Must push the git ignore before node_modules to ensure bcrypt works properly
 node_modules
 package-lock.json
 .DS_Store
