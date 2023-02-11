@@ -1,74 +1,66 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+// Imports important parts of Sequelize library.
+const { Sequelize, DataTypes, Model } = require('sequelize');
+// Imports the database connection.
+const sequelize = require("../config/connection");
 
-// create pets table to house pet information
-class Pets extends Model {
-    static like(body, models) {
-        return models.Likes.create({
-            uid: body.uid,
-            pid: body.pid
-        })
+// Initialize Pets model (table) by extending off Sequelize's Model class.
+class Pets extends Model { }
 
-    }
-}
-
-// create fields/columns for pets model (table)
 Pets.init(
+    // Set up fields and rules for Pets model.
     {
-        petId: {
-            type: DataTypes.BIGINT,
+        id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-
         },
-        petname: {
+        pet_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [4]
-            }
-        },
-        age: {
-            type: DataTypes.FLOAT,
-            allowNull: false,
-
-        },
-        sex: {
-            type: DataTypes.CHAR,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        type: {
-            type: DataTypes.STRING,
-            allowNull: true,
-
         },
         breed: {
             type: DataTypes.STRING,
-            allowNull: true,
-
+            allowNull: false,
         },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: true,
+        gender: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
-        imgurl: {
-            type: DataTypes.TEXT,
-            allowNull: true,
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        color: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        size: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        weight: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
+        isSpayedNeutered: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        species_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "species",
+                key: "id",
+            }
         }
     },
-
-
     {
-        sequelize,
-        freezeTableName: true,
-        timestamps: false,
-        underscored: true,
-        initialAutoIncrement: 500130,
-        modelName: 'pets'
+        sequelize, // Links to database connection.
+        timestamps: false, // Set to false to remove `created_at` and `updated_at` fields.
+        freezeTableName: true, // Prevents sequelize from renaming the table.
+        underscored: true, // Makes all variables that have 2 names to be separated by an underscore.
+        modelName: "pets",
     }
 );
 

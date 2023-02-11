@@ -34,15 +34,10 @@
     object-fit: cover;
   }
   
-  
   .cardbody-color{
     background-color: #ebf2fa;
   }
   
-  a{
-    text-decoration: none;
-  }
-
   .pawpals {
     /* background-color: #c8dbf0; */
     text-align: center;

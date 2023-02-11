@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const Animals = require("../../models/Animals"); // Imports the models.
+const Pets = require("../../models/Pets"); // Imports the models.
 
-// The `/api/animals` endpoint.
+// The `/api/Pets` endpoint.
 
 // Get all dogs and changes the anonymous callback function to become Asynchronous with with try/catch for errors.
 // along with HTTP status codes.
 router.get("/dogs", async (req, res) => {
     try {
         // Store the dogsData in a variable once the promise is resolved.
-        const dogsData = await Animals.findAll({
+        const dogsData = await Pets.findAll({
             where: {
                 species_id: 1
             },
@@ -31,7 +31,7 @@ router.get("/dogs", async (req, res) => {
 router.get("/cats", async (req, res) => {
     try {
         // Store the dogsData in a variable once the promise is resolved.
-        const catsData = await Animals.findAll({
+        const catsData = await Pets.findAll({
             where: {
                 species_id: 2
             },

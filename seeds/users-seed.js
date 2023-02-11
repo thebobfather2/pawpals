@@ -1,4 +1,4 @@
-const { Users } = require('../models');
+const Users  = require('../models/Users')
 
 const usersdata = [
     {
