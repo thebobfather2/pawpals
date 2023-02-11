@@ -3,6 +3,8 @@ const express = require("express");
 const routes = require("./routes");
 const path = require('path');
 const sequelize = require("./config/connection"); // Imports sequelize connection.
+const exphbs = require('express-handlebars');
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -73,6 +75,7 @@ sequelize.sync({ force: false }).then(() => {
   // Force false so data doesn't get dropped on every sync.
   app.listen(PORT, () => console.log(`Now listening on Port ${PORT} 🐾`));
 });
+
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
