@@ -73,3 +73,6 @@ sequelize.sync({ force: false }).then(() => {
   // Force false so data doesn't get dropped on every sync.
   app.listen(PORT, () => console.log(`Now listening on Port ${PORT} 🐾`));
 });
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
