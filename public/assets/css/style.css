@@ -42,3 +42,7 @@
     /* background-color: #c8dbf0; */
     text-align: center;
   }
+
+  .dogGif {
+    max-width: 250px;
+  }
