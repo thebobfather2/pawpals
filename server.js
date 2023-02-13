@@ -1,5 +1,6 @@
 // Packages / Dependencies.
 const express = require("express");
+const session = require("express-session");
 const routes = require("./routes");
 const path = require('path');
 const sequelize = require("./config/connection"); // Imports sequelize connection.
@@ -10,6 +11,18 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 // Set Handlebars as the default template engine.
+const sess = {
+  secret: 'I have a secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  // store: new SequelizeStore({
+  //   db: sequelize
+  // })
+}
+
+app.use(session(sess))
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
