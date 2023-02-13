@@ -4,16 +4,21 @@ const routes = require("./routes");
 const path = require('path');
 const sequelize = require("./config/connection"); // Imports sequelize connection.
 const exphbs = require('express-handlebars');
-
+const hbs = exphbs.create({});
 
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+// Set Handlebars as the default template engine.
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // Express middleware.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Recognizes the incoming Request Object as a JSON Object.
 // Makes the public folder available to the client.
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('./controllers/animals-routes'));
 
 // Turn on routes.
 app.use(routes);
@@ -75,7 +80,3 @@ sequelize.sync({ force: false }).then(() => {
   // Force false so data doesn't get dropped on every sync.
   app.listen(PORT, () => console.log(`Now listening on Port ${PORT} 🐾`));
 });
-
-
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
