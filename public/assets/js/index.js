@@ -1,43 +1,61 @@
-let dogsList;
-const dogsContainer = document.getElementById("dogies");
+var containerEl;
 
 $(function () {
-  getDogs();
+  findPath();
 })
 
-const getDogs = () => {
-  fetch('/api/palplace/dogs', {
+const findPath = () => {
+  if (window.location.pathname === '/pages/dogs.html') {
+    let fetchData = '/api/palplace/dogs';
+    containerEl = document.getElementById("dogies");
+    getData(fetchData);
+    return containerEl;
+  }
+}
+
+function getData(fetchData) {
+  fetch(fetchData, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then(response => response.json())
-    .then(data => {
-      console.log(data)
-      renderDogsList(data);
+  })
+    .then(function (response) {
+      if (!response.ok) {
+        alert("No pets found!");
+      }
+      else {
+        return response.json()
+          .then(function (data) {
+            if (data !== null) {
+              console.log(data);
+              renderCards(data);
+            }
+          })
+      }
     })
 }
 
-// Render the list of note titles
-const renderDogsList = (data) => {
+function renderCards(data) {
   for (i = 0; i < data.length; i++) {
-    var dogCard = $("<div>");
-    dogCard.attr('id', `${data[i].id}`);
-    dogCard.addClass("card pb-0");
+    console.log(data[i].pet_name);
+    var petCard = $("<div>");
+    petCard.attr('id', `${data[i].id}`);
+    petCard.addClass("card pb-0");
 
     var cardBody = $("<div>");
     cardBody.addClass("card-body");
 
-    var dogNameEl = $("<h3>");
-    dogNameEl.attr('id', `${data[i].pet_name}`);
-    dogNameEl.addClass('card-title');
-    dogNameEl.text(data[i].pet_name);
+    var petNameEl = $("<h3>");
+    petNameEl.attr('id', `${data[i].pet_name}`);
+    petNameEl.addClass('card-title');
+    petNameEl.text(data[i].pet_name);
 
     var spanTagAge = $("<span>");
     spanTagAge.attr('id', 'age-' + `${data[i].id}`);
     spanTagAge.addClass('age');
     spanTagAge.text(`${data[i].age}` + 'y');
-    dogNameEl.append(spanTagAge);
+    petNameEl.append(spanTagAge);
 
     var breedEl = $("<h4>");
     breedEl.attr('id', 'breed-' + `${data[i].id}`);
@@ -84,7 +102,7 @@ const renderDogsList = (data) => {
     spanTagSize.text(data[i].isSpayedNeutered);
     pTagSpayedNeutered.append(spanTagSpayedNeutered)
 
-    cardBody.append(dogNameEl);
+    cardBody.append(petNameEl);
     cardBody.append(breedEl);
     cardBody.append(pTagGender);
     cardBody.append(pTagColor);
@@ -92,7 +110,7 @@ const renderDogsList = (data) => {
     cardBody.append(pTagWeight);
     cardBody.append(pTagSpayedNeutered);
 
-    dogCard.append(cardBody);
-    dogsContainer.append(dogCard);
+    petCard.append(cardBody);
+    containerEl.append(petCard);
   }
 };
