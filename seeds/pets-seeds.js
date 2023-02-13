@@ -67,6 +67,17 @@ const petData = [
     isSpayedNeutered: true,
     species_id: 2,
   },
+  {
+    pet_name: 'Hopper',
+    breed: 'Angora',
+    gender: 'Female',
+    age: 7,
+    color: 'White',
+    size: "Small",
+    weight: 5,
+    isSpayedNeutered: false,
+    species_id: 3,
+  },
 ];
 
 const seedPets = () => Pets.bulkCreate(petData);
