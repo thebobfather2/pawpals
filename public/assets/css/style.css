@@ -1,48 +1,92 @@
+/* Pseudo-class that matches the root element of the document. */
+:root {
+  --dark-shades: rgb(4, 8, 11);
+  --dark-accent: rgb(171, 15, 163);
+  --main-brand: #09317b;
+  --light-accent: #c0d5f7;
+  --light-shades: #ebf2fa;
+  --heading: 'Mochiy Pop One', sans-serif;
+  --body: 'Oswald', sans-serif;
+}
+
 * {
-    font-family: 'Mochiy Pop One', sans-serif;
+  font-family: var(--heading);
 }
 
 .title {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .lead {
-    text-align: center;
-    font-size: large;
+  text-align: center;
+  font-size: large;
 }
 
 .banner {
-    padding: 25px;
-    display: flex;
-    flex-direction: row;
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
 }
 
 .titleContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.btn-color{
-    background-color: #09317b;
-    color: #fff;
-    
-  }
-  
-  .profile-image-pic{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-  }
-  
-  .cardbody-color{
-    background-color: #ebf2fa;
-  }
-  
-  .pawpals {
-    /* background-color: #c8dbf0; */
-    text-align: center;
-  }
+.btn-color {
+  background-color: var(--main-brand);
+  color: #fff;
 
-  .dogGif {
-    max-width: 250px;
-  }
+}
+
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.cardbody-color {
+  background-color: var(--light-shades);
+}
+
+.pawpals {
+  /* background-color: #c8dbf0; */
+  text-align: center;
+}
+
+.dogGif {
+  max-width: 250px;
+}
+
+h3,
+span {
+  color: var(--main-brand);
+}
+
+.card {
+  margin: 15px 2px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--main-brand);
+  width: 20vw;
+  height: 42vh;
+  text-align: center;
+}
+
+.petName {
+  font-size: 28px;
+}
+
+.petName,
+.age {
+  margin-bottom: 20px;
+}
+
+.age {
+  margin-left: 8rem;
+  font-size: 20px;
+}
+
+.breed {
+  margin: 10px;
+  font-size: 19px;
+}

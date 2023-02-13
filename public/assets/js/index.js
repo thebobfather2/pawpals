@@ -1,29 +1,21 @@
-var containerEl;
-var spayedNeutered;
+let containerEl;
+let fetchData;
+let spayedNeutered;
 
-$(function () {
-  findPath();
-})
-
-const findPath = () => {
-  if (window.location.pathname === '/pages/dogs.html') {
-    let fetchData = '/api/palplace/dogs';
-    containerEl = document.getElementById("dogies");
-    getData(fetchData);
-    return containerEl;
-  }
-  else if (window.location.pathname === '/pages/cats.html') {
-    let fetchData = '/api/palplace/cats';
-    containerEl = document.getElementById("kitties");
-    getData(fetchData);
-    return containerEl;
-  }
-  else if (window.location.pathname === '/pages/rabbits.html') {
-    let fetchData = '/api/palplace/rabbits';
-    containerEl = document.getElementById("bunnies");
-    getData(fetchData);
-    return containerEl;
-  }
+if (window.location.pathname === '/dogs') {
+  fetchData = '/api/palplace/dogs';
+  containerEl = document.getElementById("dogies");
+  getData(fetchData);
+}
+else if (window.location.pathname === '/cats') {
+  fetchData = '/api/palplace/cats';
+  containerEl = document.getElementById("kitties");
+  getData(fetchData);
+}
+else if (window.location.pathname === '/rabbits') {
+  fetchData = '/api/palplace/rabbits';
+  containerEl = document.getElementById("bunnies");
+  getData(fetchData);
 }
 
 function getData(fetchData) {
@@ -55,7 +47,7 @@ function renderCards(data) {
     var petID = document.createAttribute("id");
     var petClass = document.createAttribute("class");
     petID.value = (data[i].id);
-    petClass.value = "card pb-0 m-4 w-50";
+    petClass.value = "card pb-0 m-4";
     petCard.setAttributeNode(petID);
     petCard.setAttributeNode(petClass);
 
@@ -68,27 +60,22 @@ function renderCards(data) {
     var petNameID = document.createAttribute("id");
     var petNameClass = document.createAttribute("class");
     petNameID.value = (data[i].pet_name);
-    petNameClass.value = "card-title";
+    petNameClass.value = "card-title petName";
     petNameEl.setAttributeNode(petNameID);
     petNameEl.setAttributeNode(petNameClass);
+    petNameEl.textContent = (data[i].pet_name);
 
     var spanTagAge = document.createElement("span");
-    var spanTagAgeID = document.createAttribute("id");
     var spanTagAgeClass = document.createAttribute("class");
-    spanTagAgeID.value = 'age-' + `${data[i].id}`;
     spanTagAgeClass.value = 'age';
-    spanTagAge.setAttributeNode(spanTagAgeID);
     spanTagAge.setAttributeNode(spanTagAgeClass);
     spanTagAge.textContent = `${data[i].age}` + 'y';
 
     petNameEl.append(spanTagAge);
 
     var breedEl = document.createElement("h4");
-    var breedElID = document.createAttribute("id");
     var breedElClass = document.createAttribute("class");
-    breedElID.value = 'breed-' + `${data[i].id}`;
-    breedElClass.value = "card-subtitle mb-2 pb-2 border-bottom border-2";
-    breedEl.setAttributeNode(breedElID);
+    breedElClass.value = "card-subtitle mt-2 mb-2 pb-2 border-bottom border-2 breed";
     breedEl.setAttributeNode(breedElClass);
     breedEl.textContent = `${data[i].breed}`;
 
@@ -98,9 +85,6 @@ function renderCards(data) {
     pTagGender.setAttributeNode(pTagGenderClass);
     pTagGender.textContent = 'Gender: ';
     var spanTagGender = document.createElement("span");
-    var spanTagGenderID = document.createAttribute("id");
-    spanTagGenderID.value = 'gender' + `${data[i].id}`;
-    spanTagGender.setAttributeNode(spanTagGenderID);
     spanTagGender.textContent = `${data[i].gender}`;
     pTagGender.append(spanTagGender);
 
@@ -110,9 +94,6 @@ function renderCards(data) {
     pTagColor.setAttributeNode(pTagColorClass);
     pTagColor.textContent = 'Color: ';
     var spanTagColor = document.createElement("span");
-    var spanTagColorID = document.createAttribute("id");
-    spanTagColorID.value = 'color' + `${data[i].id}`;
-    spanTagColor.setAttributeNode(spanTagColorID);
     spanTagColor.textContent = `${data[i].color}`;
     pTagColor.append(spanTagColor);
 
@@ -122,9 +103,6 @@ function renderCards(data) {
     pTagSize.setAttributeNode(pTagSizeClass);
     pTagSize.textContent = 'Size: ';
     var spanTagSize = document.createElement("span");
-    var spanTagSizeID = document.createAttribute("id");
-    spanTagSizeID.value = 'size' + `${data[i].id}`;
-    spanTagSize.setAttributeNode(spanTagSizeID);
     spanTagSize.textContent = `${data[i].size}`;
     pTagSize.append(spanTagSize);
 
@@ -134,9 +112,6 @@ function renderCards(data) {
     pTagWeight.setAttributeNode(pTagWeightClass);
     pTagWeight.textContent = 'Weight: ';
     var spanTagWeight = document.createElement("span");
-    var spanTagWeightID = document.createAttribute("id");
-    spanTagWeightID.value = 'weight' + `${data[i].id}`;
-    spanTagWeight.setAttributeNode(spanTagWeightID);
     spanTagWeight.textContent = `${data[i].weight}`;
     pTagWeight.append(spanTagWeight);
 
@@ -146,9 +121,6 @@ function renderCards(data) {
     pTagSpayedNeutered.setAttributeNode(pTagSpayedNeuteredClass);
     pTagSpayedNeutered.textContent = 'Spayed/Neutered: ';
     var spanTagSpayedNeutered = document.createElement("span");
-    var spanTagSpayedNeuteredID = document.createAttribute("id");
-    spanTagSpayedNeuteredID.value = 'spayed-neutered' + `${data[i].id}`;
-    spanTagSpayedNeutered.setAttributeNode(spanTagSpayedNeuteredID);
 
     if (data[i].isSpayedNeutered) {
       spanTagSpayedNeutered.textContent = "Yes!";
