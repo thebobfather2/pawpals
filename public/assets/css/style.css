@@ -63,7 +63,7 @@ span {
   color: var(--main-brand);
 }
 
-.card {
+.petCard {
   margin: 15px 2px;
   border-radius: 10px;
   box-shadow: 0 4px 10px var(--main-brand);
