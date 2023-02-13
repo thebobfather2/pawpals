@@ -48,4 +48,26 @@ router.get("/cats", async (req, res) => {
     }
 });
 
+// Get all rabbits and changes the anonymous callback function to become Asynchronous with with try/catch for errors.
+// along with HTTP status codes.
+router.get("/rabbits", async (req, res) => {
+    try {
+        // Store the dogsData in a variable once the promise is resolved.
+        const rabbitsData = await Pets.findAll({
+            where: {
+                species_id: 3
+            },
+        });
+        if (!rabbitsData) {
+            res.status(404).json({ message: "No rabbits were found!" });
+            return;
+        } else {
+            res.status(200).json(rabbitsData);
+        }
+    } catch (err) {
+        // 500 status code means internal server error.
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
