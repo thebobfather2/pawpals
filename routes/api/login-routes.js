@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Users  = require('../../models/Users');
+const Users = require('../../models/Users');
 const sequelize = require("../../config/connection");
 
 // get api/users
@@ -14,12 +14,13 @@ router.get('/login', (req, res) => {
         })
 })
 
-// get specific user api/users/id
-router.get('/:userId', (req, res) => {
+// get specific user api/users/id not the correct endpoint
+// /api/login-routes/profile
+router.get('/profile', (req, res) => {
     Users.findOne({
         attributes: { exclude: ['passwordHash'] },
         where: {
-            userId: req.params.userId
+            userId: req.session.userId
         }
     })
         .then(dbUserData => {
@@ -35,8 +36,8 @@ router.get('/:userId', (req, res) => {
         })
 })
 
-// POST api/users (sign up)
-router.post('/login', (req, res) => {
+// POST api/users (sign up) (actual endpoint: /api/login-routes/)
+router.post('/', (req, res) => {
     Users.create({
         username: req.body.username,
         email: req.body.email,
@@ -57,7 +58,7 @@ router.post('/login', (req, res) => {
         });
 });
 
-// post api/users/login
+// post api/users/login (actual endpoint: /api/login-routes/login)
 router.post('/login', (req, res) => {
     Users.findOne({
         where: {
