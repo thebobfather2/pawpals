@@ -25,7 +25,7 @@ const petData = [
   },
   {
     pet_name: 'Max',
-    breed: 'Chihuahua',
+    breed: 'Lab Mix',
     gender: 'Male',
     age: 2,
     color: 'Brown',
@@ -36,7 +36,7 @@ const petData = [
   },
   {
     pet_name: 'Luna',
-    breed: 'Poodle',
+    breed: 'Chihuahua Mix',
     gender: 'Female',
     age: 9,
     color: 'White',
@@ -60,7 +60,7 @@ const petData = [
   // cats
   {
     pet_name: 'Milo',
-    breed: 'Siamese',
+    breed: 'Tabby',
     gender: 'Male',
     age: 6,
     color: 'White and Black',
