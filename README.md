@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://pawpals.herokuapp.com/"><strong> https://pawpals.herokuapp.com/ </strong></a>
+  <a href="https://pawpals.herokuapp.com/"><strong> PawPals Official Site </strong></a>
   <br>
 </p>
 
@@ -168,13 +168,13 @@ For questions and support feel free to contact us via:
 
 <a href="mailto:larigens@gmail.com">📧 Email Larissa Guilherme </a>
 
-<a href="mailto:">📧 Email Sarah Jacobs </a>
+<a href="mailto:sgjacobs14@gmail.com">📧 Email Sarah Jacobs </a>
 
 <a href="mailto:bryanandrewpike@gmail.com">📧 Email Bryan Pike </a>
 
 <a href="mailto:anastasiamarkova@icloud.com">📧 Email Anastasia Markova </a>
 
-<a href="mailto:">📧 Email Naz Yasar </a>
+<a href="mailto:nazyasar95@gmail.com">📧 Email Naz Yasar </a>
 
 ## Contributing
 
