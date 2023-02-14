@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href=""><strong> https://pawpals.herokuapp.com/ </strong></a>
+  <a href="https://pawpals.herokuapp.com/"><strong> https://pawpals.herokuapp.com/ </strong></a>
   <br>
 </p>
 
