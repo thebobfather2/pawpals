@@ -33,9 +33,22 @@
   flex-direction: column;
 }
 
+.btn {
+  border-radius: 2px;
+  width: 15%;
+  height: 20%;
+  background-color: rgb(255, 48, 48);
+  border-color: rgb(56, 56, 56);
+  border-radius: 20px;
+  border-width: 1%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .btn-color {
   background-color: var(--main-brand);
   color: #fff;
+  border-color: #c0d5f7;
 
 }
 
@@ -93,4 +106,23 @@ span {
 .breed {
   margin: 10px;
   font-size: 19px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
