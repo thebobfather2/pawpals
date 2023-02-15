@@ -171,7 +171,7 @@ const petData = [
     species_id: 3,
   },
   {
-    pet_name: 'Daisty',
+    pet_name: 'Daisy',
     breed: 'Dward Hotot',
     gender: 'Female',
     age: 2,
