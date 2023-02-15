@@ -143,3 +143,7 @@ function renderCards(data) {
     containerEl.append(petCard);
   }
 };
+
+function displayAlert() {
+  alert("Thank you! Our team will reach out to you soon :)");
+}
