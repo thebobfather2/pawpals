@@ -85,7 +85,7 @@ span {
   border-radius: 10px;
   box-shadow: 0 4px 10px var(--main-brand);
   width: 20vw;
-  height: 42vh;
+  height: 45vh;
   text-align: center;
 }
 
@@ -99,8 +99,15 @@ span {
 }
 
 .age {
-  margin-left: 8rem;
+  margin-left: 1rem;
   font-size: 20px;
+}
+
+.petImg {
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
 .breed {
