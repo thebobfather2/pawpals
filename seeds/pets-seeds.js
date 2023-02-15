@@ -56,6 +56,17 @@ const petData = [
     isSpayedNeutered: true,
     species_id: 1,
   },
+  {
+    pet_name: 'Rocky',
+    breed: 'Pitbull',
+    gender: 'Female',
+    age: 3,
+    color: 'Brown and Black',
+    size: 'Large',
+    weight: 60,
+    isSpayedNeutered: true,
+    species_id: 1,
+  },
 
   // cats
   {
