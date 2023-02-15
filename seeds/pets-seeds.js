@@ -14,7 +14,7 @@ const petData = [
   },
   {
     pet_name: 'Charlie',
-    breed: 'English Bullanimal',
+    breed: 'English Bulldog',
     gender: 'Male',
     age: 9,
     color: 'Brown and White',

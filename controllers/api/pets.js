@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const sequelize = require("../../config/connection");
 const Pets = require("../../models/Pets"); // Imports the models.
 
 // The `/api/Pets` endpoint.

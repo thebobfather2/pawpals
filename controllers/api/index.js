@@ -1,10 +1,9 @@
 const router = require('express').Router();
 const petsRoutes = require('./pets');
-const loginRoutes = require('./login-routes');
-const sequelize = require("../../config/connection");
+const usersRoutes = require('./users');
 
 // Prefix all routes.
 router.use('/palplace', petsRoutes); // defined in `pets.js` with `/palplace
-router.use('/login-routes', loginRoutes); // defined in `login-routes.js` with `/login
+router.use('/users', usersRoutes); // defined in `users.js` with `/login
 
 module.exports = router
