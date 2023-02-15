@@ -1,7 +1,7 @@
 <h1 align="center"> Paw Pals </h1>
 
 <p align="center">
-    <img src="./assets/images/logo.png" alt="logo" width="125px" height="125px" />
+    <img src="./public/images/logo.jpeg" alt="logo" width="125px" height="125px" />
   <br><br>
   <i> Adopt A Pet Near You!
     <br> built using Node.js and MySQL</i>
@@ -92,7 +92,7 @@ npm i express
 
 ### Setting Up
 
-Open the project in VS Code and make sure you are in the directory of this application before installing `MySQL2`, `dotenv` and `Sequelize`. To install it, type the commands below on your terminal:
+Open the project in VS Code and make sure you are in the directory of this application before installing the dependencies. To install it, type the commands below on your terminal:
 
 For `MySQL2`
 
@@ -100,16 +100,40 @@ For `MySQL2`
 npm i mysql2
 ```
 
-For `dotenv`
-
-```bash
-npm i dotenv
-```
-
 For `Sequelize`
 
 ```bash
 npm i sequelize
+```
+
+For `Express Handlebars`
+
+```bash
+npm i express-handlebars
+```
+
+For `Express Session`
+
+```bash
+npm i express-session
+```
+
+For `Connect Session Sequelize`
+
+```bash
+npm i connect-session-sequelize
+```
+
+For `bcrypt`
+
+```bash
+npm i bcrypt
+```
+
+For `dotenv`
+
+```bash
+npm i dotenv
 ```
 
 You can also open the project in VS Code, make sure you are in the directory of this application and then type the command below on your terminal:
@@ -124,7 +148,7 @@ Once you run this, npm will begin the installation process of all of the current
 
 The following images shows the web application's appearance:
 
-<img src="./assets/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
+<img src="/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
 
 ## Usage
 
@@ -214,6 +238,10 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [Sequelize](https://www.npmjs.com/package/sequelize)
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Express Session](https://github.com/expressjs/session#readme)
+- [Express Handlebars](https://github.com/express-handlebars/express-handlebars)
+- [Connect Session Store using Sequelize](https://github.com/mweibel/connect-session-sequelize)
+- [Handlebars](https://handlebarsjs.com/guide/builtin-helpers.html#with)
 - [Postman API](https://www.postman.com/)
 - [Insomnia](https://insomnia.rest/)
 
