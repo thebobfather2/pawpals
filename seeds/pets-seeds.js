@@ -36,7 +36,7 @@ const petData = [
   },
   {
     pet_name: 'Luna',
-    breed: 'Chihuahua Mix',
+    breed: 'Chihuahua Terrier Mix',
     gender: 'Female',
     age: 9,
     color: 'White',
@@ -74,7 +74,7 @@ const petData = [
     breed: 'Tabby',
     gender: 'Male',
     age: 6,
-    color: 'White and Black',
+    color: 'Orange, White, and Black',
     size: "Small",
     weight: 10,
     isSpayedNeutered: true,
