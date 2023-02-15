@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Pets = require("../../models/Pets"); // Imports the models.
+const Pets = require("../../models/pets"); // Imports the models.
 
 // The `/api/Pets` endpoint.
 
