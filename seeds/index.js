@@ -1,7 +1,7 @@
 const seedSpecies = require('./species-seeds');
 const seedPets = require('./pets-seeds');
 // const seedUsers = require('./users-seed');
-const Users = require('../models/Users');
+const Users = require('../models/users');
 const userData = require('./userData.json');
 
 
