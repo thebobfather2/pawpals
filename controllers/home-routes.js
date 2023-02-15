@@ -16,62 +16,98 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Prevent non logged in users from viewing the cats page
-router.get('/cats', withAuth, async (req, res) => {
+router.get('/cats', async (req, res) => {
     try {
-        const userData = await Users.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
-
-        const users = userData.map((project) => project.get({ plain: true }));
-
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
         res.render('cats', {
-            users,
-            loggedIn: req.session.loggedIn,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
-
-// Prevent non logged in users from viewing the dogs page
-router.get('/dogs', withAuth, async (req, res) => {
+router.get('/dogs', async (req, res) => {
     try {
-        const userData = await Users.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
-
-        const users = userData.map((project) => project.get({ plain: true }));
-
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
         res.render('dogs', {
-            users,
-            loggedIn: req.session.loggedIn,
+            loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
+router.get('/rabbits', async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('rabbits', {
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+// // Prevent non logged in users from viewing the cats page
+// router.get('/cats', withAuth, async (req, res) => {
+//     try {
+//         const userData = await Users.findAll({
+//             attributes: { exclude: ['password'] },
+//             order: [['name', 'ASC']],
+//         });
+
+//         const users = userData.map((project) => project.get({ plain: true }));
+
+//         res.render('cats', {
+//             users,
+//             loggedIn: req.session.loggedIn,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+// // Prevent non logged in users from viewing the dogs page
+// router.get('/dogs', withAuth, async (req, res) => {
+//     try {
+//         const userData = await Users.findAll({
+//             attributes: { exclude: ['password'] },
+//             order: [['name', 'ASC']],
+//         });
+
+//         const users = userData.map((project) => project.get({ plain: true }));
+
+//         res.render('dogs', {
+//             users,
+//             loggedIn: req.session.loggedIn,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // Prevent non logged in users from viewing the rabbits page
-router.get('/rabbits', withAuth, async (req, res) => {
-    try {
-        const userData = await Users.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
+// router.get('/rabbits', withAuth, async (req, res) => {
+//     try {
+//         const userData = await Users.findAll({
+//             attributes: { exclude: ['password'] },
+//             order: [['name', 'ASC']],
+//         });
 
-        const users = userData.map((project) => project.get({ plain: true }));
+//         const users = userData.map((project) => project.get({ plain: true }));
 
-        res.render('rabbits', {
-            users,
-            loggedIn: req.session.loggedIn,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         res.render('rabbits', {
+//             users,
+//             loggedIn: req.session.loggedIn,
+//         });
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // GET Route for login page if the user is not already logged in.
 router.get('/login', (req, res) => {

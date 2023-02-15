@@ -1,20 +1,24 @@
 let containerEl;
 let fetchData;
+let folderName;
 let spayedNeutered;
 
 if (window.location.pathname === '/dogs') {
   fetchData = '/api/palplace/dogs';
   containerEl = document.getElementById("dogies");
+  folderName = 'dogs';
   getData(fetchData);
 }
 else if (window.location.pathname === '/cats') {
   fetchData = '/api/palplace/cats';
   containerEl = document.getElementById("kitties");
+  folderName = 'cats';
   getData(fetchData);
 }
 else if (window.location.pathname === '/rabbits') {
   fetchData = '/api/palplace/rabbits';
   containerEl = document.getElementById("bunnies");
+  folderName = 'rabbits';
   getData(fetchData);
 }
 
@@ -72,6 +76,17 @@ function renderCards(data) {
     spanTagAge.textContent = `${data[i].age}` + 'y';
 
     petNameEl.append(spanTagAge);
+
+    var petImg = document.createElement("img");
+    var petImgSrc = document.createAttribute("src");
+    var petImgAlt = document.createAttribute("alt");
+    var petImgClass = document.createAttribute("class");
+    petImgSrc.value = `/images/${folderName}/${data[i].pet_name}.png`;
+    petImgAlt.value = `pic of a ${folderName}`;
+    petImgClass.value = 'petImg';
+    petImg.setAttributeNode(petImgSrc);
+    petImg.setAttributeNode(petImgAlt);
+    petImg.setAttributeNode(petImgClass);
 
     var breedEl = document.createElement("h4");
     var breedElClass = document.createAttribute("class");
@@ -132,6 +147,7 @@ function renderCards(data) {
     pTagSpayedNeutered.append(spanTagSpayedNeutered);
 
     cardBody.append(petNameEl);
+    cardBody.append(petImg);
     cardBody.append(breedEl);
     cardBody.append(pTagGender);
     cardBody.append(pTagColor);
