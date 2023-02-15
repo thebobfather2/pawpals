@@ -87,6 +87,7 @@ span {
   width: 20vw;
   height: 45vh;
   text-align: center;
+  object-fit: contain;
 }
 
 .petName {
