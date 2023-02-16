@@ -5,6 +5,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
+
+
 const sequelize = require('./config/connection'); // Imports sequelize connection.
 // Create a new sequelize store using the express-session package
 // const SequelizeStore = require('')(session.Store);
@@ -35,6 +37,8 @@ app.use(express.json()); // Recognizes the incoming Request Object as a JSON Obj
 app.use(express.urlencoded({ extended: true }));
 // Makes the public folder available to the client.
 app.use(express.static(path.join(__dirname, 'public')));
+
+//app.use(withAuth);
 
 // Turn on routes.
 app.use(routes);

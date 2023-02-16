@@ -2,7 +2,7 @@ const sendLoginInfo = async (event) => {
     event.preventDefault();
 
     // Gets user's inputs from the form elements.
-    const email = document.getElementById("email").value.trim();
+    const email = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
 
     if (email && password) {
@@ -15,6 +15,7 @@ const sendLoginInfo = async (event) => {
             },
         });
         if (response.ok) {
+            alert("you are now logged in");
             document.location.replace('/');
         } else {
             alert('Failed to log in');
