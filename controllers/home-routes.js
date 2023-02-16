@@ -120,6 +120,13 @@ router.get('/login', (req, res) => {
     }
 });
 
+router.get('/logout', (req, res) => {
+    // If a session exists, redirect the request to the homepage
+
+    res.render('logout');
+    // }
+});
+
 // GET Route for signup page.
 router.get('/signup', async (req, res) => {
     try {
