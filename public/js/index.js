@@ -51,7 +51,7 @@ function renderCards(data) {
     var petID = document.createAttribute("id");
     var petClass = document.createAttribute("class");
     petID.value = (data[i].id);
-    petClass.value = "card petCard m-4";
+    petClass.value = "card petCard pb-4 m-4";
     petCard.setAttributeNode(petID);
     petCard.setAttributeNode(petClass);
 

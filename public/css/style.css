@@ -120,6 +120,7 @@ span {
 .column {
   float: left;
   width: 25%;
+  padding-bottom: 25px;
 }
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
