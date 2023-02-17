@@ -85,7 +85,7 @@ span {
   border-radius: 10px;
   box-shadow: 0 4px 10px var(--main-brand);
   width: 20vw;
-  height: 45vh;
+  height: 80vh;
   text-align: center;
   object-fit: contain;
   padding-bottom: 50px !important;
@@ -120,7 +120,6 @@ span {
 .column {
   float: left;
   width: 25%;
-  padding-bottom: 25px;
 }
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
