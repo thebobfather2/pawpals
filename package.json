@@ -1,36 +1,58 @@
 {
   "name": "pawpals",
   "version": "1.0.0",
-  "description": "<h1 align=\"center\"> Paw Pals </h1>",
+  "description": "help find loving homes for animals in need",
+  "engines": {
+    "node": "18.14.1"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thebobfather2/pawpals.git"
+    "url": "git+https://github.com/larigens/pawpals.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "passportjs",
+    "sequelize",
+    "handlebars",
+    "mysql",
+    "express-session",
+    "bcrypt",
+    "dotenv"
+  ],
+  "author": "Larissa Guilherme",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/thebobfather2/pawpals/issues"
+    "url": "https://github.com/larigens/pawpals/issues"
   },
-  "homepage": "https://github.com/thebobfather2/pawpals#readme",
+  "homepage": "https://github.com/larigens/pawpals#readme",
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "eslint": "^8.34.0",
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
     "connect-session-sequelize": "^7.1.5",
-    "dotenv": "^8.6.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.34.0",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "express-session": "^1.17.3",
-    "mysql2": "^2.3.3",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
     "sequelize": "^6.28.0"
   }
 }

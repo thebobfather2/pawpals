@@ -56,6 +56,10 @@ li {
   list-style: none;
 }
 
+.logs {
+  padding-right: 20px;
+}
+
 .profile-image-pic {
   height: 200px;
   width: 200px;

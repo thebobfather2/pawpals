@@ -1,0 +1,61 @@
+<div class="jumbotron jumbotron-fluid p-1 bg-light">
+    <div class="container">
+        <h1 class="display-4 pawpals">Become a Paw Pal!🐾</h1>
+    </div>
+</div>
+
+<section class="vh-100 bg-image" style="background-image: url('/images/background.jpg');">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="border-radius: 15px;">
+                        <div class="card-body p-5">
+                            <h5 class="text-uppercase text-center mb-5">Create an account</h5>
+                            <form id="signup" name="signup" method="post" action="/signup">
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="firstname" name="firstname"
+                                        class="form-control form-control-lg" required />
+                                    <label class="form-label" for="firstname">First Name</label>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="lastname" name="lastname"
+                                        class="form-control form-control-lg" required />
+                                    <label class="form-label" for="lastname">Last Name</label>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="email" name="email" class="form-control form-control-lg"
+                                        required />
+                                    <label class="form-label" for="email">Your Email</label>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="password" name="password"
+                                        class="form-control form-control-lg" required />
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
+                                <div class="form-check d-flex justify-content-center mb-5">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="terms"
+                                        aria-required="true" required />
+                                    <label class="form-check-label" for="terms">
+                                        I agree all statements in
+                                        <a href="#!" class="text-body"><u>Terms of service</u></a>
+                                    </label>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" value="signup" id="signupbtn"
+                                        class="btn btn-success p-2 w-50 d-flex justify-content-center flex-nowrap mb-3 mt-3"> Register
+                                    </button>
+                                </div>
+                                <p class="text-center text-muted mt-5 mb-0">Have already an account?
+                                    <a href="/login" class="fw-bold text-body">
+                                        <u>Login here</u>
+                                    </a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,7 +1,7 @@
 //============== Import Methods ==============//
 const Pets = require('./pets');
 const Species = require("./species");
-const Users = require("./users");
+const User = require("./user");
 //============================= Association Methods =============================//
 
 // Pets belongsTo Species.
@@ -19,5 +19,5 @@ Species.hasMany(Pets, {
 module.exports = {
     Pets,
     Species,
-    Users,
+    User,
 }

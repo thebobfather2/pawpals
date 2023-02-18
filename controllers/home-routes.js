@@ -1,140 +1,12 @@
 const router = require('express').Router();
-const { Users } = require('../models');
-const withAuth = require('../utils/auth');
+const passport = require('passport');
 
 // GET Route for home page.
 router.get('/', async (req, res) => {
     try {
         // Logs the request to the terminal.
         console.info(`${req.method} request received for ${req.path}`);
-        res.render('home', {
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-
-router.get('/cats', async (req, res) => {
-    try {
-        // Logs the request to the terminal.
-        console.info(`${req.method} request received for ${req.path}`);
-        res.render('cats', {
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-router.get('/dogs', async (req, res) => {
-    try {
-        // Logs the request to the terminal.
-        console.info(`${req.method} request received for ${req.path}`);
-        res.render('dogs', {
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-router.get('/rabbits', async (req, res) => {
-    try {
-        // Logs the request to the terminal.
-        console.info(`${req.method} request received for ${req.path}`);
-        res.render('rabbits', {
-            loggedIn: req.session.loggedIn
-        });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-// // Prevent non logged in users from viewing the cats page
-// router.get('/cats', withAuth, async (req, res) => {
-//     try {
-//         const userData = await Users.findAll({
-//             attributes: { exclude: ['password'] },
-//             order: [['name', 'ASC']],
-//         });
-
-//         const users = userData.map((project) => project.get({ plain: true }));
-
-//         res.render('cats', {
-//             users,
-//             loggedIn: req.session.loggedIn,
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// // Prevent non logged in users from viewing the dogs page
-// router.get('/dogs', withAuth, async (req, res) => {
-//     try {
-//         const userData = await Users.findAll({
-//             attributes: { exclude: ['password'] },
-//             order: [['name', 'ASC']],
-//         });
-
-//         const users = userData.map((project) => project.get({ plain: true }));
-
-//         res.render('dogs', {
-//             users,
-//             loggedIn: req.session.loggedIn,
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// Prevent non logged in users from viewing the rabbits page
-// router.get('/rabbits', withAuth, async (req, res) => {
-//     try {
-//         const userData = await Users.findAll({
-//             attributes: { exclude: ['password'] },
-//             order: [['name', 'ASC']],
-//         });
-
-//         const users = userData.map((project) => project.get({ plain: true }));
-
-//         res.render('rabbits', {
-//             users,
-//             loggedIn: req.session.loggedIn,
-//         });
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// GET Route for login page if the user is not already logged in.
-router.get('/login', (req, res) => {
-    // If a session exists, redirect the request to the homepage
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    } else {
-        res.render('login');
-    }
-});
-
-router.get('/logout', (req, res) => {
-    // If a session exists, redirect the request to the homepage
-
-    res.render('logout');
-    // }
-});
-
-// GET Route for signup page.
-router.get('/signup', async (req, res) => {
-    try {
-        // Logs the request to the terminal.
-        console.info(`${req.method} request received for ${req.path}`);
-        res.render('signup', {
-            loggedIn: req.session.loggedIn
-        });
+        res.render('home');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -146,9 +18,7 @@ router.get('/about', async (req, res) => {
     try {
         // Logs the request to the terminal.
         console.info(`${req.method} request received for ${req.path}`);
-        res.render('about', {
-            loggedIn: req.session.loggedIn
-        });
+        res.render('about');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -160,8 +30,96 @@ router.get('/contact', async (req, res) => {
     try {
         // Logs the request to the terminal.
         console.info(`${req.method} request received for ${req.path}`);
-        res.render('contact', {
-            loggedIn: req.session.loggedIn
+        res.render('contact');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for signup page.
+router.get('/signup', async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('signup');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for login page.
+router.get('/login', async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('login');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.post('/signup', passport.authenticate('local-signup', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/signup'
+}
+));
+
+// GET Route for dashboard page.
+router.get('/dashboard', isLoggedIn, async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('dashboard');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for cats page.
+router.get('/cats', isLoggedIn, async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('cats');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for dogs page.
+router.get('/dogs', isLoggedIn, async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('dogs');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for rabbits page.
+router.get('/rabbits', isLoggedIn, async (req, res) => {
+    try {
+        // Logs the request to the terminal.
+        console.info(`${req.method} request received for ${req.path}`);
+        res.render('rabbits');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// GET Route for logout page.
+router.get('/logout', async (req, res) => {
+    try {
+        req.session.destroy(function (err) {
+            res.redirect('/');
         });
     } catch (err) {
         console.log(err);
@@ -169,4 +127,16 @@ router.get('/contact', async (req, res) => {
     }
 });
 
-module.exports = router;
+router.post('/login', passport.authenticate('local-login', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/login'
+}
+));
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/login');
+}
+
+module.exports = router, passport;

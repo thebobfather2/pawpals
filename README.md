@@ -1,15 +1,15 @@
 <h1 align="center"> Paw Pals </h1>
 
 <p align="center">
-    <img src="./public/images/logo.jpeg" alt="logo" width="230px" height="180px" />
+    <img src="./public/images/logo.gif" alt="logo" width="230px" height="180px" />
   <br><br>
   <i> Adopt A Pet Near You!
-    <br> built using Node.js and MySQL</i>
+    <br> built using Express, Sequelize and Handlebars! </i>
   <br>
 </p>
 
 <p align="center">
-  <a href="https://pawpals.herokuapp.com/"><strong> PawPals Official Site </strong></a>
+  <a href="https://paw-pals.herokuapp.com/"><strong> PawPals Official Site </strong></a>
   <br>
 </p>
 
@@ -18,11 +18,11 @@
 <div align="center">
 
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
-![Contributors](https://img.shields.io/github/contributors/thebobfather2/pawpals?style=plastic&color=red)
-![Forks](https://img.shields.io/github/forks/thebobfather2/pawpals?style=plastic&color=red)
-![Stars](https://img.shields.io/github/stars/thebobfather2/pawpals?style=plastic&color=red)
+![Contributors](https://img.shields.io/github/contributors/larigens/pawpals?style=plastic&color=red)
+![Forks](https://img.shields.io/github/forks/larigens/pawpals?style=plastic&color=red)
+![Stars](https://img.shields.io/github/stars/larigens/pawpals?style=plastic&color=red)
 ![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=red)
-![Issues](https://img.shields.io/github/issues/thebobfather2/pawpals?style=plastic&color=red)
+![Issues](https://img.shields.io/github/issues/larigens/pawpals?style=plastic&color=red)
 
 </div>
 
@@ -37,7 +37,6 @@ Adopting a pet is a big decision, and we're here to support you every step of th
 ## Table of Contents
 
 - [Description](#description)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
   - [Prerequisites](#prerequisites)
@@ -136,6 +135,12 @@ For `dotenv`
 npm i dotenv
 ```
 
+For `Passport`
+
+```bash
+npm i passport
+```
+
 You can also open the project in VS Code, make sure you are in the directory of this application and then type the command below on your terminal:
 
 ```bash
@@ -148,7 +153,11 @@ Once you run this, npm will begin the installation process of all of the current
 
 The following images shows the web application's appearance:
 
-<img src="/images/demo1.png" alt="App Screenshot" width="700px" height="342px" />
+<img src="./public/images/demo1.png" alt="App Screenshot" width="600px" height="265px" />
+
+<img src="./public/images/demo2.png" alt="App Screenshot" width="600px" height="265px" />
+
+<img src="./public/images/demo3.png" alt="App Screenshot" width="600px" height="265px" />
 
 ## Usage
 
@@ -174,17 +183,13 @@ Open your terminal, make sure you are in the directory of this application and t
 npm run seed
 ```
 
-The following animation shows the application's **GET** routes to return all dogs, all cats, and all rabbits being tested in Insomnia:
+The following animation shows the application's **GET** routes to return all dogs, all cats, and all rabbits being tested in Postman:
 
-![In Insomnia, the user tests “GET tags,” “GET Categories,” and “GET All Dogs.”.](./assets/demo1.gif)
+![In Postman, the user tests “GET tags,” “GET Categories,” and “GET All Dogs.”.](./public/images/dogs-test.png)
 
-The following animation shows the application's **GET** routes to return a single dog, a single cat, and a single rabbit being tested in Insomnia:
+![In Postman, the user tests “GET tags,” “GET Categories,” and “GET All Cats.”.](./public/images/cats-test.png)
 
-![In Insomnia, the user tests “GET tag by id,” “GET Category by ID,” and “GET One Dog.”](./assets/demo2.gif)
-
-The following animation shows the application's **POST, PUT, and DELETE** routes for dogs, cats and rabbits being tested in Insomnia:
-
-![In Insomnia, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Dog.”](./assets/demo3.gif)
+![In Postman, the user tests “GET tags,” “GET Categories,” and “GET All Rabbits.”.](./public/images/rabbits-test.png)
 
 ## Questions
 
@@ -244,6 +249,7 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [Handlebars](https://handlebarsjs.com/guide/builtin-helpers.html#with)
 - [Postman API](https://www.postman.com/)
 - [Insomnia](https://insomnia.rest/)
+- [Passport](https://www.npmjs.com/package/passport)
 
 ## License
 

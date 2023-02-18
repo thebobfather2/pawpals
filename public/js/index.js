@@ -4,19 +4,19 @@ let folderName;
 let spayedNeutered;
 
 if (window.location.pathname === '/dogs') {
-  fetchData = '/api/palplace/dogs';
+  fetchData = '/api/dogs';
   containerEl = document.getElementById("dogies");
   folderName = 'dogs';
   getData(fetchData);
 }
 else if (window.location.pathname === '/cats') {
-  fetchData = '/api/palplace/cats';
+  fetchData = '/api/cats';
   containerEl = document.getElementById("kitties");
   folderName = 'cats';
   getData(fetchData);
 }
 else if (window.location.pathname === '/rabbits') {
-  fetchData = '/api/palplace/rabbits';
+  fetchData = '/api/rabbits';
   containerEl = document.getElementById("bunnies");
   folderName = 'rabbits';
   getData(fetchData);
@@ -29,7 +29,7 @@ function getData(fetchData) {
       'Content-Type': 'application/json',
     },
   })
-    .then(function (response) {
+    .then((response) => {
       if (!response.ok) {
         alert("No pets found!");
       }
@@ -51,7 +51,7 @@ function renderCards(data) {
     var petID = document.createAttribute("id");
     var petClass = document.createAttribute("class");
     petID.value = (data[i].id);
-    petClass.value = "card petCard pb-4 m-4";
+    petClass.value = "card petCard pb-0 m-4";
     petCard.setAttributeNode(petID);
     petCard.setAttributeNode(petClass);
 
@@ -146,6 +146,18 @@ function renderCards(data) {
 
     pTagSpayedNeutered.append(spanTagSpayedNeutered);
 
+    // var adoptBtn = document.createElement("button");
+    // var adoptBtnClass = document.createAttribute("class");
+    // var adoptBtnClick = document.createAttribute("onclick");
+    // var adoptBtnType = document.createAttribute("type");
+    // adoptBtnType.value = "button";
+    // adoptBtnClass.value = "btn btn-primary pt-2 pb-2 ps-3 pe-3 mb-5";
+    // adoptBtnClick.value = `adoptMe(${data[i].id})`;
+    // adoptBtn.setAttributeNode(adoptBtnType);
+    // adoptBtn.setAttributeNode(adoptBtnClass);
+    // adoptBtn.setAttributeNode(adoptBtnClick);
+    // adoptBtnClass.textContent = 'Adopt Me!';
+
     cardBody.append(petNameEl);
     cardBody.append(petImg);
     cardBody.append(breedEl);
@@ -154,6 +166,7 @@ function renderCards(data) {
     cardBody.append(pTagSize);
     cardBody.append(pTagWeight);
     cardBody.append(pTagSpayedNeutered);
+    // cardBody.append(adoptBtn);
 
     petCard.append(cardBody);
     containerEl.append(petCard);
@@ -163,3 +176,12 @@ function renderCards(data) {
 function displayAlert() {
   alert("Thank you! Our team will reach out to you soon :)");
 }
+
+// function adoptMe(id) {
+//   fetch(`/api/${folderName}/${id}`, {
+//     method: 'DELETE',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     }
+//   })
+// }

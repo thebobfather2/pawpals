@@ -1,10 +1,6 @@
 const seedSpecies = require('./species-seeds');
 const seedPets = require('./pets-seeds');
-// const seedUsers = require('./users-seed');
-const Users = require('../models/users');
-const userData = require('./userData.json');
-
-
+const seedUser = require('./user-seeds');
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -14,13 +10,8 @@ const seedAll = async () => {
     console.log('\n----- SPECIES SEEDED -----\n');
     await seedPets();
     console.log('\n----- PETS SEEDED -----\n');
-    // await seedUsers();
-    // console.log('\n----- USERS SEEDED -----\n');
-    
-    await Users.bulkCreate(userData, {
-        individualHooks: true,
-        returning: true,
-    });
+    await seedUser();
+    console.log('\n----- USERS SEEDED -----\n');
 
     process.exit(0);
 };

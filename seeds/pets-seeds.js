@@ -1,6 +1,7 @@
 const { Pets } = require('../models'); // Imports the models.
 
 const petData = [
+  // Dogs
   {
     pet_name: 'Bella',
     breed: 'German Shepherd',
@@ -68,7 +69,7 @@ const petData = [
     species_id: 1,
   },
 
-  // cats
+  // Cats
   {
     pet_name: 'Milo',
     breed: 'Tabby',
@@ -136,7 +137,7 @@ const petData = [
     species_id: 2,
   },
 
-  // rabbits
+  // Rabbits
   {
     pet_name: 'Hopper',
     breed: 'Angora',
